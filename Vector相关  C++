@@ -1,0 +1,8 @@
+vector<int> 定义一个一维
+
+vector<vector<int> >  多维;"> >"需要一个空格
+
+vector二维数组获取行、列大小：
+int Row = Array.size();
+int Col1 = Array[0].size();//第一行
+int Col2 = Array[1].size();//第二行
