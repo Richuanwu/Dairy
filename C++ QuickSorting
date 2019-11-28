@@ -1,0 +1,32 @@
+/*
+快速排序：分而治之。
+通过排序将序列分割为两部分，左边都是比基线（第一个数）条件小的数，
+右边都是比它大的数，然后按照整个方法对分割后的两个序列排序，使用
+递归进行快速排序
+*/
+int Division(vector<int> &nums, int left, int right)
+{
+	int Reference = nums[left];
+	while (left < right)
+	{
+		while (left < right && nums[right] >= Reference) right--;
+		nums[left] = nums[right];
+		while (left < right && nums[left] <= Reference) left++;
+		nums[right] = nums[left];
+		
+	}
+	nums[left] = Reference;
+	return left;
+}
+vector<int> QuickSorting(vector<int> &nums, int left, int right)
+{
+	size_t length = nums.size();
+	if (length <= 1) return nums;
+	if (left < right)
+	{
+		int Column = Division(nums, left, right);
+		QuickSorting(nums, left, Column - 1);
+		QuickSorting(nums, Column + 1, right);
+	}
+	return nums;
+}
