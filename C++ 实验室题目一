@@ -1,0 +1,32 @@
+string Kaohe(string str)	//输入参数为L、G、A的组合字符串
+{
+	int flag = 0;
+	int la = 0, l = 0;
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if((str.substr(i, 1) == "L" || str.substr(i, 1) == "A"))
+		{
+			flag = i;
+			la++;
+			if (la > 1)
+				return "False";
+			
+		}
+		else if (str.substr(i, 1) == "G")
+		{
+			if(i - flag == 1)
+				la = 0;
+		}
+	}
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if (str.substr(i, 1) == "L")
+		{
+			l++;
+			if (l > 1)
+				return "False";
+
+		}
+	}
+	return "True";
+}
