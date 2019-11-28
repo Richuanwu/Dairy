@@ -1,0 +1,20 @@
+string ten2eleven(int num)	//十进制转十一进制
+{
+	string str, tmp;
+	string out;
+	while(num)
+	{
+		tmp = to_string(num % 11);
+		if (tmp == "10")
+		{
+			str += "A";
+		}
+		else str += tmp;
+		num = num / 11;
+	}
+	for (int i = str.size() - 1; i >= 0; i--)
+	{
+		out += str[i];
+	}
+	return out;
+}
