@@ -1,5 +1,5 @@
 /*
-快速排序
+简单排序：逐一与后续的最大（最小）的数做交换
 */
 vector<int> SimpleSorting(vector<int> &nums, size_t times)
 {
