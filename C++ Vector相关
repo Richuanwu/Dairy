@@ -1,6 +1,6 @@
 vector<int> 定义一个一维
 
-vector<vector<int> >  多维;"> >"需要一个空格
+vector<vector<int> >  多维;"> >"需要一个空格  ::C++11之后已经不用了
 
 vector二维数组获取行、列大小：
 int Row = Array.size();
